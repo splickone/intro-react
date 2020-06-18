@@ -25,18 +25,21 @@ class App extends React.Component {
       buttonClicked: buttonName
     });
   }
+
   /*Check out this addAssignment method*/
   addAssignment(assignmentName) {
     this.setState({
       assignments: this.state.assignments.concat(assignmentName)
     });
   }
+
   /*Write an addStudent method here*/
-  addStudent(studentName){
+  addStudent (studentName ) {
     this.setState({
       students: this.state.students.concat(studentName)
     });
   }
+
   addGrade(assignment, student, score) {
     let grades = this.state.grades;
     let assignmentName = assignment;
@@ -47,8 +50,10 @@ class App extends React.Component {
     grades[assignmentName][studentName] = score;
     this.setState({ grades: grades });
   }
+
   render() {
     let tabChoice = <div />;
+
     /*Uncomment below to render assignments*/
     if (this.state.buttonClicked === "assignments") {
       tabChoice = (
@@ -61,17 +66,12 @@ class App extends React.Component {
       );
     }
 
-
-
-
-
-
     /* Change below to render students*/
-    
+
     if (this.state.buttonClicked === "students") {
       tabChoice = (
         <List
-          placeholder="Add Students..." 
+          placeholder="Add Student..." 
           currList={this.state.students}
           addFunction={this.addStudent}
           title="Student Roster"
@@ -95,7 +95,7 @@ class App extends React.Component {
       <div>
         <div className="Box Box--spacious f4">
           <div className="Box-header">
-          <h3 className="Box-title d-flex flex-justify-center">GradeBook</h3>
+            <h3 className="Box-title d-flex flex-justify-center">GradeBook</h3>
           </div>
         </div>
         <nav className="UnderlineNav d-flex flex-justify-center">
