@@ -47,10 +47,8 @@ class App extends React.Component {
     grades[assignmentName][studentName] = score;
     this.setState({ grades: grades });
   }
-
   render() {
     let tabChoice = <div />;
-
     /*Uncomment below to render assignments*/
     if (this.state.buttonClicked === "assignments") {
       tabChoice = (
@@ -62,6 +60,7 @@ class App extends React.Component {
         />
       );
     }
+    
     /* Change below to render students*/
     if (this.state.buttonClicked === "students") {
       tabChoice = (
